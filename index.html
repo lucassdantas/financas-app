@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$Finanças</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <img src="./assets/logo.svg" alt="Logo Dev Finance">
+    </header>
+    <main class="container">
+        <section id="balance">
+            <h2 class="sr-only">Balanço</h2>
+            <div class="card">
+                <h3>Entradas</h3>
+                <p>R$ 5000,00</p>
+            </div>
+            <div class="card">
+                <h3>Saídas</h3>
+                <p>R$ 2000,00</p>
+            </div>
+            <div class="card total">
+                <h3>Total</h3>
+                <p>R$ 3000,00</p>
+            </div>
+        </section>
+        <section id="transactions">
+            <h2 class="sr-only">Transações</h2>
+            <Table id="data-table">
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Luz</td>
+                        <td>500</td>
+                        <td>30-12-2021</td>
+                    </tr>
+                    <tr>
+                        <td>Criação de site</td>
+                        <td>5000</td>
+                        <td>30-12-2021</td>
+                    </tr>
+                    <tr>
+                        <td>Produção de filme</td>
+                        <td>10000</td>
+                        <td>30-12-2021</td>
+                    </tr>
+                </tbody>
+            </Table>
+        </section>
+    </main>
+    <footer>
+        <p>$Finanças</p>
+    </footer>
+</body>
+</html>
