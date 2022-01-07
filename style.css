@@ -110,12 +110,15 @@ margin-top:0px;
 }
 
 /*Table=================*/
+#transaction{
+    width:100%;
+    display:block;
+    overflow-x: auto;
+}
 #data-table{
     color:#969cb3;
     border-spacing:0 0.5rem;
     width:100%;
-    display:block;
-    overflow-x: auto;
 }
 table tr th:first-child,
 table tr td:first-child{
@@ -150,6 +153,34 @@ table tbody td{
 table tbody{
     color:black;
     opacity:0.7;
+}
+
+/*MODAL================*/
+.modal-overlay{
+    width:100%;
+    height:100%;
+
+    background-color:rgba(0,0,0,0.7);
+
+    position:fixed;
+    top:0;
+
+    display:flex;
+    align-items:center;
+    justify-content: center;
+
+    visibility:hidden;
+    opacity:0;
+
+
+}
+.modal-overlay.active{
+    visibility:visible;
+    opacity:1;
+}
+.modal{
+    background-color: white;
+    padding:2.4rem;
 }
 /*FOOTER===============*/
 footer{
