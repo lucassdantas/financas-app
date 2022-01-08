@@ -41,7 +41,11 @@
         </section>
         <section id="transactions">
             <h2 class="sr-only">Transações</h2>
-            <a href="#" class="button new">+Nova transação</a>
+            <a 
+                href="#" 
+                onclick="Modal.open()"
+                class="button new">+Nova transação
+            </a>
             <Table id="data-table">
                 <thead>
                     <tr>
@@ -52,29 +56,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Luz</td>
-                        <td>500</td>
-                        <td>30-12-2021</td>
-                        <td><img src="./assets/minus.svg"alt="Remover transação"></td>
-                    </tr>
-                    <tr>
-                        <td>Criação de site</td>
-                        <td>5000</td>
-                        <td>30-12-2021</td>
-                        <td><img src="./assets/minus.svg"alt="Remover transação"></td>
-                    </tr>
-                    <tr>
-                        <td>Produção de filme</td>
-                        <td>10000</td>
-                        <td>30-12-2021</td>
-                        <td><img src="./assets/minus.svg"alt="Remover transação"></td>
-                    </tr>
                 </tbody>
             </Table>
         </section>
     </main>
-    <div class="modal-overlay active">
+    <div id="modal" class="modal-overlay">
         <div class="modal">
             <div id="form">
                 <h2> Nova Transação</h2>
@@ -93,7 +79,10 @@
                     <input type="date" id="date" name="date">    
                 </div>
                 <div class="input-group actions">
-                    <a href="#" class="button-cancel">Cancelar</a>
+                    <a 
+                        onclick="Modal.close()"
+                        href="#"
+                        class="button-cancel">Cancelar</a>
                     <button type="submit">Enviar</button>
                 </div>
 
@@ -104,5 +93,6 @@
     <footer>
         <p>$Finanças</p>
     </footer>
+    <script src="./script.js"> </script>
 </body>
 </html>

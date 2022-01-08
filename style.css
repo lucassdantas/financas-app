@@ -8,6 +8,8 @@ essa cor, é só escrever "var(--dark-blue)"*/
     --dark-blue:#363f5f;
     --green: #49AA2F;
     --light-green: #3dd705;
+    --red: #e92929;
+    --light-red: #ff2929;
 }
 *{
     margin:0px;
@@ -79,7 +81,6 @@ button{
     cursor:pointer;
 }
 button:hover{
-    color:rgb(216, 216, 216);
     background-color: var(--light-green);
 }
 .button.new{
@@ -93,16 +94,18 @@ button:hover{
     align-items:center; /*eixo x */
     justify-content:center;
     
-    border: none;
-    color:white;
-    background-color:red;
+    border:2px var(--red) solid;
+    border-radius:0.25rem;
+    color:var(--red);
 
+    opacity:0.6;
     padding:0;
     
-    border-radius:0.25rem;
+    height:50px;
 }
 .button-cancel:hover{
-    color:rgb(216, 216, 216);
+    color:var(--light-red);
+    opacity:1;
 }
 /*BALANCE==============*/
 #balance{
@@ -210,6 +213,8 @@ table tbody{
     visibility:hidden;
     opacity:0;
 
+    z-index:999;
+
 
 }
 .modal-overlay.active{
@@ -221,6 +226,8 @@ table tbody{
     padding:2.4rem;
     width:90%;
     max-width:500px;
+    position:relative;
+    z-index:1;
 }
 
 /*FORM================*/
