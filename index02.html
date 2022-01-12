@@ -22,21 +22,21 @@
                     <span>Entradas</span>
                     <img src="./assets/income.svg" alt="Income image">
                 </h3>
-                <p>R$ 5000,00</p>
+                <p id="incomeDisplay">R$ 5000,00</p>
             </div>
             <div class="card">
                 <h3>
                     <span>Saída</span>
                     <img src="./assets/expense.svg" alt="Saida image">
                 </h3>
-                <p>R$ 2000,00</p>
+                <p id="expenseDisplay">R$ 2000,00</p>
             </div>
             <div class="card total">
                 <h3>
                     <span>Total</span>
                     <img src="./assets/total.svg" alt="Total image">
                 </h3>
-                <p>R$ 3000,00</p>
+                <p id="totalDisplay">R$ 3000,00</p>
             </div>
         </section>
         <section id="transactions">
@@ -64,29 +64,28 @@
         <div class="modal">
             <div id="form">
                 <h2> Nova Transação</h2>
-                <form action=""></form>
-                <div class="input-group">
-                    <label for="description" class="sr-only">Descrição</label>
-                    <input type="text" id="description" name="description" placeholder="Descrição">    
-                </div>
-                <div class="input-group">
-                    <label for="amount" class="sr-only">Valor</label>
-                    <input type="number" id="amount" name="amount" placeholder="0,00" step="0.01">    
-                </div>
-                <small class="help"> Use o sinal - (negativo) para despesas e , para casas decimais.</small>
-                <div class="input-group">
-                    <label for="date" class="sr-only">Data</label>
-                    <input type="date" id="date" name="date">    
-                </div>
-                <div class="input-group actions">
-                    <a 
-                        onclick="Modal.close()"
-                        href="#"
-                        class="button-cancel">Cancelar</a>
-                    <button type="submit">Enviar</button>
-                </div>
-
-
+                <form action="" onsubmit="Form.submit(event)">
+                    <div class="input-group">
+                        <label for="description" class="sr-only">Descrição</label>
+                        <input type="text" id="description" name="description" placeholder="Descrição">    
+                    </div>
+                    <div class="input-group">
+                        <label for="amount" class="sr-only">Valor</label>
+                        <input type="number" id="amount" name="amount" placeholder="0,00" step="0.01">    
+                    </div>
+                    <small class="help"> Use o sinal - (negativo) para despesas e , para casas decimais.</small>
+                    <div class="input-group">
+                        <label for="date" class="sr-only">Data</label>
+                        <input type="date" id="date" name="date">    
+                    </div>
+                    <div class="input-group actions">
+                        <a 
+                            onclick="Modal.close()"
+                            href="#"
+                            class="button-cancel">Cancelar</a>
+                        <button>Enviar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
