@@ -17,24 +17,18 @@ let Modal = {
     }
 }
 
+const Storage = {
+    get(){
+        return JSON.parse(localStorage.getItem("transacoes")) ||
+        []
+    },
+
+    set(transactions) {
+        localStorage.setItem("transacoes", JSON.stringify(transactions))
+    }
+}
 const Transaction = {
-    all: [
-            {
-            description:"Luz",
-            amount:50000,
-            date:"30-12-2021",
-            }, 
-            {
-                description:"Criação de site",
-                amount:-500001,
-                date:"30-12-2021",
-            }, 
-            {
-                description:"Produção de filme",
-                amount:1000000,
-                date:"30-12-2021",
-            },
-        ]
+    all: Storage.get()
  ,
     add(transaction){
         Transaction.all.push(transaction)
@@ -73,11 +67,11 @@ const DOM ={
     transactionContainer: document.querySelector("#data-table tbody"),
     addTransaction(transaction, index) {
         const tr = document.createElement("tr")
-        tr.innerHTML = DOM.innerHTMLTransaction(transaction)
-
+        tr.innerHTML = DOM.innerHTMLTransaction(transaction, index)
+        tr.dataset.index = index
         DOM.transactionContainer.appendChild(tr)
     },
-    innerHTMLTransaction(transaction) {
+    innerHTMLTransaction(transaction, index) {
         const amount = Utils.formatCurrency(transaction.amount) 
         const CSSclass = transaction.amount > 0 ? "income":"expense"
         const html = `
@@ -86,7 +80,7 @@ const DOM ={
             <td class="${CSSclass}">${amount}</td>
             <td class="date">${transaction.date}</td>
             <td>
-                <img src="./assets/minus.svg"alt="Remover transação">
+                <img onclick="Transaction.remove(${index})" src="./assets/minus.svg"alt="Remover transação">
             </td>
         </tr> `
         return html
@@ -185,22 +179,18 @@ const Form = {
 const App = {
     init() {
 
-        DOM.updateBalance()
+       
         
-        Transaction.all.forEach(transaction => {
-            DOM.addTransaction(transaction)
+        Transaction.all.forEach((transaction, index) => {
+            DOM.addTransaction(transaction, index)
         })
-        
+        DOM.updateBalance()
+        Storage.set(Transaction.all)
     },
     reload() {
         DOM.clearTransactions()
         App.init()
     },
 }
+
 App.init()
-Transaction.add({
-    description: "Alo",
-    amount:200,
-    date: "10/01/2022",
-})
-Transaction.remove(0)
